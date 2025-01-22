@@ -1,0 +1,133 @@
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOut 2s ease-in-out;
+}
+ 
+
+@keyframes fadeOut {
+    0% {opacity: 0;}
+    10% {opacity: 5%;}
+    50% {opacity: 70%;}
+    80% {opacity: 90%;}
+    100% {opacity: 100%;}
+}
+
+
+.container h1 {
+    color: rgb(229, 11, 117);
+    font-family: Century751 SeBd BT;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+.achievement {
+    width: 40%;
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-left: 2%;
+    box-shadow: 0px 0px 10px black;
+    transition: transform 0.3s ease-in-out;
+}
+  
+.achievement:hover {
+    transform: scale(1.05);
+  }
+  
+
+.achievement ul {
+    font-family: Century751 SeBd BT;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.internship {
+    margin-left: 5%;
+    width: 40%;
+    font-family: Century751 SeBd BT;
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-right: 2%;
+    box-shadow: 0px 0px 10px black;
+    transition: transform 0.3s ease-in-out;
+}
+
+.internship:hover {
+    transform: scale(1.05);
+  }
+  
+
+.internship ul {
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+.achievement ul li {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.activity {
+    font-family: Century751 SeBd BT;
+    color:black;
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-left: 2%;
+    box-shadow: 0px 0px 10px black;
+    transition: transform 0.3s ease-in-out;
+}
+
+  
+.activity:hover {
+    transform: scale(1.05);
+  }
+  
+
+.activity ul {
+    text-align: left;
+    padding-left: 20px;
+}
+
+@media screen and (max-width: 1024px) { 
+    .container h1 {
+        font-size: 26px;
+    }
+
+    .container ul {
+        font-size: 16px;
+    }
+
+    .achievement, .internship, .activity {
+        padding: 20px;
+    }
+}
+
+
+@media screen and (max-width: 768px) { 
+    .container h1 {
+        font-size: 20px;
+    }
+
+    .container ul {
+        font-size: 14px;
+    }
+
+    .achievement, .internship, .activity {
+        padding: 20px;
+    }
+}

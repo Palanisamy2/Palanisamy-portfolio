@@ -1,0 +1,162 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.project h2, .project h3 {
+    font-family: 'Poppins', sans-serif;
+    color: rgb(229, 11, 117);
+    margin: 10px;
+}
+
+.project
+{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    animation: fadeOut 2s ease-in-out;
+    text-align: justify;
+}
+ 
+
+@keyframes fadeOut {
+    0% {opacity: 0;}
+    10% {opacity: 5%;}
+    50% {opacity: 70%;}
+    80% {opacity: 90%;}
+    100% {opacity: 100%;}
+}
+
+.proj-1, .proj-2 {
+    width: 40%;
+    height: max-content;
+    background-color: white;
+    border:solid 1px black;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    height: max-content;
+    margin: 20px 0 20px 25%;
+    padding: 10px;
+    position: relative;
+    z-index: 0;
+    box-shadow: 0px 0px 10px black;
+}
+
+.proj-1 img, .proj-2 img {
+    position: static;
+    width: 80%;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    margin: 10px 0 10px 10%;
+}
+
+.project-data-description, .tools, .key-features, .Languages  {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 20px;
+   
+}
+
+.key-features ul, .tools ul,.Languages ul {
+    margin:0 0 0 50px;
+    width: 100%;
+}
+
+.proj-1 button a, .proj-2 button a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+
+
+}
+
+.proj-1 button, .proj-2 button {
+    display: flex;
+    width: 25%;
+    height: 35px;
+    font-family: Raleway-Black;
+    font-size: 18px;
+    background-color: rgb(253, 118, 190);
+    color: white;
+    border-radius: 10px;
+    border:solid deeppink 2px;
+    margin: 3% 30% 0% 30%;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+  }
+
+.proj-1 button:hover, .proj-2 button:hover {
+    background-color: #4d54da;
+    border: solid #3c419a 2px;
+    transform: translateY(-10px);
+}
+
+.proj-1 button a, .proj-2 button a {
+    color: white;
+    padding-top: 3px;
+}
+
+@media screen and (max-width : 1024px) {
+    .proj-1, .proj-2 {
+        width: 60%;
+        margin: 20px 0 20px 20%;
+        box-shadow: 0px 0px 10px black;
+    }
+    
+    .proj-1 button, .proj-2 button {
+        margin: 3% 35% 2% 35%;
+    }
+
+}
+
+
+@media screen and (max-width : 768px) {
+    .proj-1, .proj-2 {
+        width: 80%;
+        margin: 20px 0 20px 10%;
+        box-shadow: 0px 0px 10px black;
+    }
+    
+    .proj-1 button, .proj-2 button {
+        margin: 3% 35% 2% 35%;
+    }
+
+    .proj-1 h2, .proj-2 h2 {
+        font-size: 18px;
+        text-align: center;
+        margin-left: 25%;
+    }
+
+    .proj-1 h3, .proj-2 h3 {
+        font-size: 16px;
+    }
+
+    .proj-1 p, .proj-2 p {
+        font-size: 14px;
+    }
+}
+/* 
+@media screen and (max-width:426px) {
+    .navbar {
+     justify-content: space-between;
+     height: 25px;
+    }
+
+     .logo a {
+         font-size: 16px;
+     }
+
+     .nav-links a {
+         font-size: 12px;
+     } 
+
+     .proj-1, .proj-2 {
+        margin-left: 2%;
+     }
+
+
+
+} */
