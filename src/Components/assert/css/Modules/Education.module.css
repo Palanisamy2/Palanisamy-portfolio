@@ -1,0 +1,122 @@
+.Edusec {
+    display: flex;
+    width: 33%;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.UG-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    align-items: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    opacity: 90%;
+  }
+  
+  .UG-section:hover {
+    transform: scale(1.05);
+    background-color: rgb(255, 122, 224);
+    opacity: 100%;
+  }
+  
+  .UG-logo {
+    width: 100%;
+    margin-right: 20px;
+  }
+  
+  .UG-logo img {
+    width: 80px;
+    height: 80px;
+    object-fit: fill;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+  }
+  
+  .UG-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .UG-details h1 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .UG-details h2 {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .UG-details h3 {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 5px;
+  }
+  
+  .UG-details h3:last-child {
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .UG-details h3 {
+    color: #555;
+  }
+  
+  .UG-details h1, .UG-details h2, .UG-details h3 {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .UG-logo img {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  @media screen and (max-width : 1024px ) {
+    .Edusec {
+      width: 35%;
+      height: max-content;
+      margin-right: 30px;
+     }
+
+  }
+
+  @media screen and (max-width : 768px ) {
+    .Edusec {
+      height: max-content;
+      width: 33%;
+     }
+
+     .UG-details h1, .UG-details h2 {
+      font-size: 14px;
+    }
+
+    .UG-details h3 {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .Edusec {
+      height: max-content;
+      width: 70%;
+      margin: 10px;
+     }
+
+     .UG-details h1, .UG-details h2 {
+      font-size: 14px;
+    }
+
+    .UG-details h3 {
+      font-size: 12px;
+    }
+
+  }

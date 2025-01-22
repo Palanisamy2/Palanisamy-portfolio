@@ -1,0 +1,165 @@
+
+ .Certificate {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 40%;
+    align-items: center;
+    margin: 40px 50px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    transition: transform 0.3s ease-in-out;
+}
+
+ .Certificate:hover {
+    transform: scale(1.05);
+    opacity: 100%;
+  }
+
+.Certificate-logo {
+    width: 30%;
+    height: max-content;
+}
+
+.Certificate-logo img {
+    width: 80%;
+    height: fit-content;
+    border-radius: 25px;
+    border: solid deeppink 1px;
+    box-shadow: 0px 0px 3px black;
+}
+
+ .Certificate h2 {
+    color: deeppink;
+    opacity: 90%;
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+ .Certificate h3 {
+    width: 100%;
+    color: #3f3f3f;
+    margin: 10px 10px;
+    text-align: left;
+} 
+
+ .Certificate p {
+    text-align: justify;
+    margin: 0 10px;
+    color: #333;
+}
+
+.Certificate button {
+    width: 30%;
+    background-color: rgb(253, 118, 190);
+    color: white;
+    font-family: Raleway-Black;
+    font-size: 18px;
+    border-radius: 10px;
+    border:solid deeppink 2px;
+    transition: all 0.5s ease-in-out;
+    height: 35px;
+    margin: 3% 30% 0% 30%;
+    color: white;
+  }
+
+  .Certificate button:hover {
+    background-color: #4d54da;
+    border: solid #3c419a 2px;
+    transform: translateY(-10px) ;
+}
+
+@media screen and (max-width : 1024px) {
+    
+    .Certificate {
+        width: 40%;
+        margin: 30px;
+    }
+
+    .Certificate-logo img {
+        border-radius: 10px;
+    }
+
+    
+    .Certificate h2 {
+        font-size: 18px;
+    }
+
+    .Certificate h3 {
+        font-size: 18px;
+    }
+
+    .Certificate p {
+        font-size: 14px;
+    }
+
+    .Certificate button {
+        width: 35%;
+        font-size: 16px;
+        border-radius: 8px;
+      }
+}
+
+
+@media screen and (max-width:768px) {
+    
+    .Certificate {
+        width: 40%;
+        margin: 20px;
+    }
+
+    .Certificate-logo img {
+        border-radius: 8px;
+    }
+
+    
+    .Certificate h2 {
+        font-size: 16px;
+    }
+
+    .Certificate h3 {
+        font-size: 14px;
+    }
+
+    .Certificate p {
+        font-size: 14px;
+    }
+
+    .Certificate button {
+        width: 35%;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+}
+@media screen and (max-width:426px) {
+    .Certificate {
+        width: 80%;
+        margin: 20px;
+        border-radius: 20px;
+    }
+
+    .Certificate-logo img {
+        border-radius: 8px;
+    }
+
+    
+    .Certificate h2 {
+        font-size: 16px;
+    }
+
+    .Certificate h3 {
+        font-size: 14px;
+    }
+
+    .Certificate p {
+        font-size: 12px;
+    }
+
+    .Certificate button {
+        width: 40%;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+}

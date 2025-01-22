@@ -1,0 +1,1368 @@
+html {
+
+	scroll-behavior: smooth;
+}
+
+body {
+    background-color :#8C9EFF;
+}
+
+#nav {
+    position: fixed;
+    width: 100%;
+    margin: 0px;
+    opacity: 80%;
+} 
+
+.navbar {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+
+}
+
+.logo {
+    margin-left: 6%;
+}
+
+.logo a {
+    font-family:  Montserrat;
+    font-weight: bold;
+    font-size: 35px;
+    color: deeppink;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #4d54da;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    display: block;
+    position: relative;
+    
+}
+
+.nav-links li {
+    margin-right: 40%;
+    text-decoration: none;
+    list-style: none;
+    position: relative;
+    font-family: poppins;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.navbar li a::after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 0.2em;
+    width: 0%;
+    background-color: deeppink;
+    bottom: -0.4em;
+    transition: all  ease-in-out 400ms;
+
+}
+
+.navbar li a:hover::after {
+    width: 100%;
+
+}
+.navbar li a:hover {
+    color: deeppink;
+    transition: all  ease-in-out 400ms;
+}
+ /* start home  */
+#home {
+    width: 100%;
+    height: 780px;
+    margin: 0;
+    padding: 0;
+}
+
+.back-div {
+    display: flex;
+    background-image: url(./back/back.jpg);
+    width: 100%;
+    height: 780px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.back-photo-details {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 10% 60% 0 5%;
+    width: max-content;
+    /* height: 100px; */
+    /* height: 40%; */
+    height: max-content;
+    animation: fadeOut 2.5s ease-in-out ;
+}
+
+@keyframes fadeOut {
+    0% {opacity: 0;}
+    10% {opacity: 5%;}
+    50% {opacity: 70%;}
+    80% {opacity: 90%;}
+    100% {opacity: 100%;}
+}
+
+
+.bottom-left1 {
+    font-family: Raleway-Black;
+    color: #4d54da;
+    font-size: 80px;
+    width:100%;
+}
+
+.bottom-left2 {
+    color: #4d54da;
+    font-size: 80px;
+    width:100%;
+    font-family: Raleway-Black;
+}
+
+.bottom-left3 {
+    margin-left: 8%;
+    margin-top: 5%;
+    color: black;
+    font-size: 30px;
+    width:100%;
+    font-family: Raleway-Black;
+}
+
+.bottom-left4 {
+    width: 100%;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.home-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.home-btn {
+    width:35%;
+    height: max-content;
+    background-color: rgb(253, 118, 190);
+    color: white;
+    font-family: Raleway-Black;
+    font-size: 25px;
+    border-radius: 10px;
+    border:solid deeppink 2px;
+    transition: all 0.5s ease-in-out;
+    padding: 5px;
+}
+
+.home-btn:hover {
+    background-color: #4d54da;
+    border: solid #3c419a 2px;
+    transform: translateY(-10px) ;
+}
+
+.back-photo {
+    display: flex;
+}
+
+.mainphoto {
+    width: 100%;
+    height: 700px;
+    display: flex;
+}
+
+.aboutp {
+    height: max-content;
+}
+
+#about {
+    height: max-content;
+    margin-bottom: 50px;
+}
+
+.aboutme {
+    width: 100%;
+    height: 100%;
+    color:black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-intro {
+    width: 100%;
+    margin-right: 0px;
+}
+
+#intro {
+    font-family:  Raleway;
+    color: deeppink;
+    text-shadow: rgb(12, 12, 12) 2px 2px 5px;
+    width: 100%;
+    margin: 10px 0 10px 0;
+}
+
+#intro-para {
+    font-family: Nunito;
+    text-align: justify;
+    padding: 10px 15px;
+}
+
+.Educationhead {
+    width: 100%;
+}
+
+.about-education {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: max-content;
+    margin-right: 0;
+    padding-right: 0;
+    margin-top: 30px;
+}
+
+.myphoto {
+    width: 30%;
+    height: max-content;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    transition: opacity 2s;
+}
+
+.myphoto-palani {
+    width: 50%;
+    height: 200px;
+    box-shadow: 9px 10px 9px rgb(0, 0, 0);
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 0px;
+    opacity: 1;
+    transition: width 2s,height 2s,border-radius 2s,transform 2s;
+}
+
+.myphoto-palani:hover {
+    width: 40%;
+    height: fit-content;
+    border-radius: 15%;
+    transform: rotate(360deg);
+    
+}
+
+.resumeDown button {
+    width: 30%;
+    background-color: rgb(253, 118, 190);
+    color: white;
+    font-family: Raleway-Black;
+    font-size: 18px;
+    border-radius: 10px;
+    border:solid deeppink 2px;
+    transition: all 0.5s ease-in-out;
+    height: 35px;
+    margin: 3% 30% 0% 30%;
+  }
+
+.resumeDown button:hover {
+    background-color: #4d54da;
+    border: solid #3c419a 2px;
+    transform: translateY(-10px) ;
+}
+
+.about-deatils {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px 0px;
+}
+
+.about-deatils a {
+    text-decoration: none;
+    color: black;
+}
+
+.btn1-skill {
+
+    width: 20%;
+}
+
+.btn2-project {
+    width: 20%;
+}
+
+.btn3-certification {
+    width: 20%;
+}
+
+.btn4-extra {
+    width: 20%;
+}
+
+.btn1 {
+    border-radius: 30px;
+    width: 195px;
+    height: 70px;
+    background-color: #ebdbfe;
+    font-family:Raleway-Black;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 7px 8px 9px rgb(0, 0, 0);
+    border: none;
+}
+
+.btn2 {
+    border-radius: 30px;
+    width: 195px;
+    height: 70px;
+    background-color: #63ffec;
+    font-family:Raleway-Black;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 7px 8px 9px rgb(0, 0, 0);
+    border: none;
+}
+
+.btn3 {
+    border-radius: 30px;
+    width: 195px;
+    height: 70px;
+    background-color: #07c34f;
+    font-family:Raleway-Black;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 7px 8px 9px rgb(0, 0, 0);
+    border: none;
+}
+
+.btn4 {
+    border-radius: 30px;
+    width: 195px;
+    height: 70px;
+    background-color: #fe5d85;
+    font-family:Raleway-Black;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 7px 8px 9px rgb(0, 0, 0);
+    border: none;
+}
+
+.btn1:hover,.btn2:hover,.btn3:hover,.btn4:hover {
+    margin: 8px 0px 0px 8px ;
+    box-shadow: none;
+    border: 1px solid black;
+    color: black;
+    transition: all  ease-in-out 400ms;
+}
+
+.dynamic-content {
+    width: 100%;
+    height: max-content;
+    margin-bottom: 30px;
+}
+
+#services1{
+    margin-top: 50px;
+    height: 780px;
+
+}
+
+#services1 h1 {
+    color: deeppink;
+    text-shadow: rgb(12, 12, 12) 2px 2px 5px;
+    margin-bottom: 30px;
+}
+
+#services {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-around;
+    font-family: Nunito;
+}
+
+@keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+.webdevelop-service {
+    width: 25%;
+    height:max-content;
+    text-align: justify;
+    overflow: hidden;
+    border: 1px solid black;
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 80px;
+    box-shadow:15px 15px 20px black;
+    transition: transform 0.3s ease-in-out;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.uiuxdesign-service {
+    width: 25%;
+    height:max-content;
+    border: 1px solid black;
+    text-align: justify;
+    overflow: hidden;
+    border-radius: 100px; 
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 80px;
+    box-shadow:15px 15px 20px black;
+    transition: transform 0.3s ease-in-out;
+}
+
+.photoshop-service {
+    width: 25%;
+    height:max-content;
+    text-align: justify;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 100px; 
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 80px;
+    box-shadow:15px 15px 20px black;
+    transition: transform 0.3s ease-in-out;
+}
+
+.webdevelop-service:hover,.uiuxdesign-service:hover,.photoshop-service:hover {
+    transform: scale(1.05);
+}
+
+.webdevelop-service h3,.uiuxdesign-service h3,.photoshop-service h3 {
+    text-align: center;
+    color: red;
+    padding-bottom: 10px;
+}
+
+.webdevelop-service li,.uiuxdesign-service li,.photoshop-service li {
+    margin: 0 10px 0 30px;
+}
+
+.webdevelop-service h4,.uiuxdesign-service h4,.photoshop-service h4 {
+    color: blue;
+}
+
+.webdevelop-service-btn {
+    margin: 30px 0 0 28%;
+    height: 6%;
+    border-radius: 10px 10px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.8s ease-in-out 0.1s ;
+}
+
+.uiuxdesign-service-btn {
+    margin: 30px 20px 0px 30%;
+    height: 6%;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.8s ease-in-out 0.1s;
+}
+
+.photoshop-service-btn {
+    margin: 30px 20px 0px 30%;
+    height: 6%;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.8s ease-in-out 0.1s;
+}
+
+.webdevelop-service-btn:hover,.uiuxdesign-service-btn:hover,.photoshop-service-btn:hover {
+    background-color: #4d54da;
+    border: solid rgb(0, 0, 255) 1px;
+    transform: translateY(-10px) ;
+}
+
+.webdevelop-service-btn a,.uiuxdesign-service-btn a,.photoshop-service-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+#contact-page h1 {
+    width: 100%;
+    font-family: Raleway;
+    font-weight: bolder;
+    color: deeppink;
+    text-shadow: rgb(12, 12, 12) 2px 2px 5px;
+    margin-bottom: 30px;
+}
+
+.contact-div {
+    background-color: white ;
+    width: 70%;
+    height: max-content;
+    margin: 10px 15% 30px 15%;
+    padding: 0 5px 20px 5px;
+    border-radius: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+}
+
+.form {
+    width: 100%;
+    height: max-content;
+}
+
+.contact-div h2 {
+    color: red;
+    display: flex;
+    margin: 20px 0px 20px 30%;
+    font-size: 48px;
+}
+
+form .name {
+    margin-left: 20px;
+    font-size: 30px;
+    font-family: Raleway-Black;
+}
+
+.name-input {
+    width: 65%;
+    margin-left: 145px;
+    height: 30px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 10px;
+}
+
+form .mobile-number {
+    margin-left: 20px;
+    font-size: 30px;
+    font-family: Raleway-Black;
+}
+
+.mobile-number-input {
+    width: 65%;
+    margin-left: 28px;
+    height: 30px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 10px;
+}
+
+form .gmail-id {
+    margin-left: 20px;
+    font-size: 30px;
+    font-family: Raleway-Black;
+}
+
+.gmail-id-input {
+    width: 65%;
+    margin-left: 115px;
+    height: 30px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 10px;
+}
+
+form .describe {
+    margin-left: 20px;
+    margin-top: 0px;
+    font-size: 30px;
+    font-family: Raleway-Black;
+}
+
+.describe-input {
+    width: 65%;
+    margin-left: 105px;
+    height: 70px;
+    background-color: #f2f2f2;
+    border: none;
+    border-radius: 10px;
+}
+
+form button {
+    background-color: deeppink;
+    color: white;
+    width: 10%;
+    height: 30px;
+    border-radius: 10px;
+    margin: 30px 0 15px 0;
+    transition: all 0.5s ease-in-out ;
+}
+
+form button:hover {
+    background-color: #4d54da;
+    transform: translateY(-10px) ;
+}
+
+.contact-div h4 {
+    margin: 0px 0 15px 0;
+    font-size: 21px;
+}
+
+.socialmedia-contact {
+    width: 100%;
+    height: max-content;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.socialmedia-contact a {
+
+    width: 50%;
+    height: max-content;
+    margin: 0;
+    padding: 0;
+}
+
+.gmail-contact,.whatsapp-contact,.linkedin-contact,.github-contact {
+   width: 20%;
+   height: fit-content;
+    transition: all 0.3s ease-in-out ;
+    box-shadow: none;
+}
+
+.gmail-contact:hover,.whatsapp-contact:hover,.linkedin-contact:hover,.github-contact:hover {
+    transform: translateY(-10px) ;
+}
+
+.footer {
+    background-color: #b4bfff;
+    width: 100%;
+    height: 170px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer a {
+    text-decoration: none;
+    font-family:Nunito;
+    color: black;
+}
+
+.footer a:hover {
+    color: red;
+}
+
+.footer h5 {
+    font-size: 20px;
+    margin-bottom: 15%;
+    margin-top: 15%;
+    font-family: Raleway-Black;
+}
+
+.footer-contact h5 {
+    font-size: 20px;
+    padding-top: 30%;
+    font-family: Raleway-Black;
+}
+
+.footer-all {
+    padding-top: 2%;
+}
+
+.footer-portfolio {
+    padding-top: 5%;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+    #home {
+        height: max-content;
+    }
+    
+    .back-div {
+        height: 480px;
+    }
+    
+    .back-photo-details {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 20% 50% 0 5%;
+        width: max-content;
+        height: max-content;
+        animation: fadeOut 2.5s ease-in-out ;
+    }
+    
+    .bottom-left1 {
+            font-size: 40px;
+            width: 100%;  
+        }
+
+    .bottom-left2 {
+        font-size: 40px;
+    }
+
+    .bottom-left3 {
+        font-size: 15px;
+    }
+
+    .home-btn {
+        width:45%;
+        font-size: 15px;
+    }
+
+    .myphoto {
+        margin-top: 60px;
+        width: 25%;
+    }
+
+    .myphoto-palani {
+        height: 180px;
+        width: 180px;
+        box-shadow: 9px 10px 15px rgb(0, 0, 0);
+        border: solid black .5px;
+    }
+
+    .myphoto-palani:hover {
+        height: 180px;
+        width: 180px;
+    }
+    
+    .resumeDown button {
+        width: 35%;
+        border-radius: 8px;
+        border:solid deeppink 2px;
+        transition: all 0.5s ease-in-out;
+        height: 35px;
+        margin: 5% 0% 0% 6%;
+    }
+    
+    .about-education {
+        height: max-content;
+        width: 75%;
+    }
+
+    #services1{
+        margin-top: 10px;
+        height: max-content;
+    
+    }
+    
+    #services1 h1 {
+        margin-bottom: 20px;
+    }
+    
+    #services {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .webdevelop-service h4,.webdevelop-service h3,
+    .uiuxdesign-service h4,.uiuxdesign-service h3,
+    .photoshop-service h4,.photoshop-service h3 {
+        font-size: 18px;
+    }
+
+    .webdevelop-service ul li,.webdevelop-service p, 
+    .uiuxdesign-service ul li,.uiuxdesign-service p, 
+    .photoshop-service ul li,.photoshop-service p {
+        font-size: 14px;
+    }
+
+    .webdevelop-service,.uiuxdesign-service,.photoshop-service {
+        height: fit-content;
+        width: 40%;
+        border-radius: 70px;
+        padding: 20px 20px;
+    }
+
+    .uiuxdesign-service-btn,.photoshop-service-btn, .webdevelop-service-btn {
+        margin :10px 0px 0px 120px;
+    }
+
+    .contact-div {
+        padding: 20px 40px;
+    }
+
+    .contact-div h2 {
+        color: red;
+        display: flex;
+        margin-left: 180px;
+        margin-bottom: 20px;
+        font-size: 38px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logo a {
+        font-size: 25px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    #home {
+        height: max-content;
+    }
+    
+    .back-div {
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+    }
+
+    .back-photo {
+        width: 100%;
+    }
+    
+    .back-photo-details {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 10% 60% 0 5%;
+        width: max-content;
+        height: max-content;
+        animation: fadeOut 2.5s ease-in-out;
+    }
+
+    .bottom-left1 {
+            font-size: 40px;
+        }
+
+    .bottom-left2 {
+        font-size: 40px;
+    }
+
+    .bottom-left3 {
+        font-size: 15px;
+    }
+
+    .home-btn {
+        width:35%;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+
+    #about {
+        margin: 0px;
+    }
+
+    #intro-para {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    #intro  {
+        margin: 0;
+    }
+
+    .about-education {
+        width: 80%;
+        height: max-content;
+        margin-top: 15px;
+    }
+
+    .myphoto {
+        margin-top: 60px;
+        width: 20%;
+    }
+
+    .myphoto-palani {
+        width: 120px;
+        height: 120px;
+        box-shadow: 5px 5px 9px rgb(0, 0, 0);
+        border: solid black .5px;
+    }
+
+    .myphoto-palani:hover {
+        height: 120px;
+        width: 120px;
+    }
+
+    .resumeDown button {
+        width: 60%;
+        font-size: 16px;
+        border-radius: 6px;
+        height: 30px;
+        margin: 10% 0 0% 15%;
+      }
+
+    .btn1, .btn2, .btn3, .btn4 {
+        width: 90%;
+        height: 50px;
+        font-size: 14px;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    }
+
+    #services1{
+        margin-top: 30px;
+        height: max-content;
+    
+    }
+    
+    #services1 h1 {
+        margin-bottom: 20px;
+    }
+
+    #services {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .webdevelop-service h4,.webdevelop-service h3,
+    .uiuxdesign-service h4,.uiuxdesign-service h3,
+    .photoshop-service h4,.photoshop-service h3 {
+        font-size: 16px;
+    }
+
+    .webdevelop-service ul li,.webdevelop-service p, 
+    .uiuxdesign-service ul li,.uiuxdesign-service p, 
+    .photoshop-service ul li,.photoshop-service p {
+        font-size: 14px;
+    }
+
+    .webdevelop-service,.uiuxdesign-service,.photoshop-service {
+        height: fit-content;
+        width: 40%;
+        border-radius: 50px;
+        padding: 20px 20px;
+    }
+
+    .uiuxdesign-service-btn,.photoshop-service-btn, .webdevelop-service-btn {
+        margin :10px 0px 0px 80px;
+    }
+
+    .contact-div {
+        padding: 10px 20px;
+    }
+
+    .contact-div h2 {
+        color: red;
+        display: flex;
+        margin-left: 150px;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+
+    .form label {
+        font-size: 24px;
+    }
+
+    .form input, .form textArea {
+       width: 55%;
+    }
+
+    .form .mobile-number input {
+        margin-left: 45px;
+    }
+
+    form button {
+        width: 20%;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    .contact-div h4 {
+        font-size: 14px;
+    }
+
+    .footer-portfolio {
+        padding-top: 10px;
+        font-size: 30px;
+    }
+
+    .footer-all {
+        padding-top: 5%;
+    }
+
+    .footer-portfolio {
+        padding-top: 8%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {font-size: 24px; }
+    h2 { font-size: 20px;}
+    h3 { font-size: 18px;}
+    h4 { font-size: 16px;}
+    h5 { font-size: 14px;}
+    h6 { font-size: 12px;}
+    
+    .navbar   {
+        justify-content: space-between;
+        height: 25px;
+       }    
+   
+    .logo a {
+        font-size: 16px;
+    }
+
+    .nav-links li {
+        font-size: 12px;
+        margin-right: 20px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        margin-right: 5px;
+    }
+    
+    
+     #home {
+            height: max-content;
+    }
+
+    .back-photo-details {
+        padding: 18% 68% 2% 3%;
+    }
+        
+    .back-div {
+        height: 320px;
+        background-size: contain;
+    }
+
+    /* .back-photo {
+        height: fit-content;
+    } */
+
+    .bottom-left1 {
+        font-size: 20px;
+    }
+
+    .bottom-left2 {
+        font-size: 20px;
+    }
+    
+    .bottom-left3 {
+        font-size: 16px;
+    }
+    
+    .home-btn {
+        width:65%;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+
+    #about {
+        margin: 0px;
+    }
+
+    #intro {
+        font-size: 24px;
+    }
+
+    #intro-para {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .about-intro  {
+        padding-top: 10px;
+    }
+
+    .about-education {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+        margin-top: 15px;
+    }
+
+    .myphoto {
+        margin-top: 10px;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .myphoto-palani {
+        width: 120px;
+        height: 120px;
+        box-shadow: 5px 5px 9px rgb(0, 0, 0);
+        border: solid black .5px;
+    }
+
+    .myphoto-palani:hover {
+        height: 120px;
+        width: 120px;
+    }
+
+    .resumeDown button {
+        width: 30%;
+        font-size: 16px;
+        border-radius: 6px;
+        height: 30px;
+        margin: 3% 0 0% 4%;
+      }
+
+    .about-deatils {
+        margin: 15px 0;
+    }
+
+    .btn1, .btn2, .btn3, .btn4 {
+        width: 100%;
+        height: 40px;
+        font-size: 14px;
+        border-radius: 8px;
+        box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    }
+
+    #services1 {
+        margin-top: 15px;
+        height: max-content;
+    
+    }
+    
+    #services1 h1 {
+        margin-bottom: 0px;
+        font-size: 24px;
+    }
+
+    #services {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .webdevelop-service h4,.webdevelop-service h3,
+    .uiuxdesign-service h4,.uiuxdesign-service h3,
+    .photoshop-service h4,.photoshop-service h3 {
+        font-size: 16px;
+    }
+
+    .webdevelop-service ul li,.webdevelop-service p, 
+    .uiuxdesign-service ul li,.uiuxdesign-service p, 
+    .photoshop-service ul li,.photoshop-service p {
+        font-size: 14px;
+    }
+
+    .webdevelop-service,.uiuxdesign-service,.photoshop-service {
+        height: fit-content;
+        width: 80%;
+        border-radius: 40px;
+        padding: 20px 20px;
+    }
+
+    .uiuxdesign-service-btn,.photoshop-service-btn, .webdevelop-service-btn {
+        margin :10px 0px 0px 100px;
+    }
+
+    .contact-div {
+        padding: 5px 5px;
+        width: 80%;
+        margin-left: 35px;
+        align-items: center;
+        border-radius: 40px;
+    }
+
+    #contact-page h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+
+    .contact-div h2 {
+        color: red;
+        display: flex;
+        margin-left: 80px;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .form label {
+        font-size: 14px;
+        margin: 0;
+        text-align: left;
+    }
+
+    .form input, .form textArea {
+       width: 90%;
+       margin-left: 20px;
+    }
+
+    .form .mobile-number input {
+        margin-left: 10px;
+    }
+
+    form button {
+        width: 25%;
+        border-radius: 10px;
+        font-size: 14px;
+        margin: 10px 0 15px 0;
+    }
+
+    .contact-div h4 {
+        font-size: 14px;
+    }
+
+    .socialmedia-contact a img {
+        height: 30px;
+        width: 25%;
+    }
+
+    .footer {
+        height:fit-content;
+    }
+
+
+    .footer h5 {
+        margin: 5%;
+        font-size: 16px;
+    }
+
+    .footer-all {
+        margin-top: 0px;
+        font-size: 8px;
+        
+    }
+
+    .footer-about a,.footer-services a,.footer-contact a {
+        font-size: 12px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .footer-contact h5 {
+        padding: 0;
+        padding-top: 5px;
+    }
+
+    .footer-all {
+        display: none;
+    }
+
+    .footer-portfolio {
+        margin-top: 15px;
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 376px) {
+
+    .logo a {
+        font-size: 16px;
+    }
+
+    .nav-links li {
+        font-size: 12px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .back-photo-details {
+        padding: 23% 65% 2% 1%;
+    }
+        
+    .back-div {
+        height: 280px;
+        background-size: contain;
+    }
+
+    .bottom-left1 {
+        font-size: 16px;
+    }
+
+    .bottom-left2 {
+        font-size: 16px;
+    }
+    
+    .bottom-left3 {
+        font-size: 12px;
+    }
+    
+    .home-btn {
+        width:55%;
+        border-radius: 5px;
+        font-size: 8px;
+    }
+
+    #intro-para {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .btn1, .btn2, .btn3, .btn4 {
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .webdevelop-service h4,.webdevelop-service h3,
+    .uiuxdesign-service h4,.uiuxdesign-service h3,
+    .photoshop-service h4,.photoshop-service h3 {
+        font-size: 14px;
+    }
+
+    .webdevelop-service ul li,.webdevelop-service p, 
+    .uiuxdesign-service ul li,.uiuxdesign-service p, 
+    .photoshop-service ul li,.photoshop-service p {
+        font-size: 12px;
+    }
+    
+    .uiuxdesign-service-btn,.photoshop-service-btn, .webdevelop-service-btn {
+        margin :10px 0px 0px 80px;
+    }
+
+    #contact-page h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .contact-div h2 {
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+
+    .form label {
+        font-size: 12px;
+    }
+
+    form button {
+        border-radius: 8px;
+        font-size: 12px;
+        margin: 10px 0 5px 0;
+    }
+
+    .contact-div h4 {
+        font-size: 12px;
+    }
+
+    .socialmedia-contact a img {
+        height: 20px;
+        width: 25%;
+    }
+
+    
+    .footer h5 {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .footer-contact h5 {
+        margin-bottom: 0;
+    }
+
+    .footer-about a,.footer-services a,.footer-contact a {
+        font-size: 10px;
+    }
+
+}
