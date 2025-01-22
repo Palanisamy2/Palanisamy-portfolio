@@ -1037,7 +1037,7 @@ form button:hover {
     }
         
     .back-div {
-        height: 320px;
+        height: 300px;
         background-size: contain;
     }
 
@@ -1046,15 +1046,15 @@ form button:hover {
     } */
 
     .bottom-left1 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .bottom-left2 {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .bottom-left3 {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .home-btn {
@@ -1073,7 +1073,8 @@ form button:hover {
 
     #intro-para {
         padding: 5px;
-        font-size: 14px;
+        font-size: 12px;
+        padding: 10px;
     }
 
     .about-intro  {
@@ -1151,12 +1152,12 @@ form button:hover {
     .webdevelop-service ul li,.webdevelop-service p, 
     .uiuxdesign-service ul li,.uiuxdesign-service p, 
     .photoshop-service ul li,.photoshop-service p {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .webdevelop-service,.uiuxdesign-service,.photoshop-service {
         height: fit-content;
-        width: 80%;
+        width: 75%;
         border-radius: 40px;
         padding: 20px 20px;
     }
@@ -1225,7 +1226,7 @@ form button:hover {
 
     .footer h5 {
         margin: 5%;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .footer-all {
@@ -1235,7 +1236,7 @@ form button:hover {
     }
 
     .footer-about a,.footer-services a,.footer-contact a {
-        font-size: 12px;
+        font-size: 10px;
         margin-top: 0px;
         padding-top: 0px;
     }
