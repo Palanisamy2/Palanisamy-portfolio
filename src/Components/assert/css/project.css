@@ -137,26 +137,41 @@
     .proj-1 p, .proj-2 p {
         font-size: 14px;
     }
+    .key-features ul, .tools ul,.Languages ul {
+        margin:0 0 0 30px;
+    }
 }
-/* 
+
 @media screen and (max-width:426px) {
-    .navbar {
-     justify-content: space-between;
-     height: 25px;
+    .proj-1, .proj-2 {
+        width: 75%;
+        margin: 20px 0 20px 10%;
+        box-shadow: 0px 0px 10px black;
+    }
+    
+    .proj-1 button, .proj-2 button {
+        margin: 3% 35% 2% 35%;
+        width: 60%;
+        font-size: 14px;
+        border-radius: 5px;
     }
 
-     .logo a {
-         font-size: 16px;
-     }
+    .proj-1 h2, .proj-2 h2 {
+        font-size: 16px;
+        text-align: center;
+        margin-left: 25%;
+    }
 
-     .nav-links a {
-         font-size: 12px;
-     } 
+    .proj-1 h3, .proj-2 h3 {
+        font-size: 14px;
+    }
 
-     .proj-1, .proj-2 {
-        margin-left: 2%;
-     }
+    .proj-1 p, .proj-2 p {
+        font-size: 12px;
+    }
 
+    .key-features ul, .tools ul,.Languages ul {
+        margin:0 0 0 20px;
+    }
 
-
-} */
+} 

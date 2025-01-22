@@ -82,6 +82,7 @@
 
 .activity {
     font-family: Century751 SeBd BT;
+    width: 50%;
     color:black;
     margin-bottom: 50px;
     padding: 30px;
@@ -130,4 +131,18 @@
     .achievement, .internship, .activity {
         padding: 20px;
     }
+
+@media screen and (max-width: 426px) {
+    .container h1 {
+        font-size: 16px;
+    }
+
+    .container ul {
+        font-size: 10px;
+    }
+
+    .achievement, .internship, .activity {
+        padding: 10px;
+    }
+}
 }

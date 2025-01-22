@@ -67,9 +67,14 @@
         border-radius: 5px;
         filter: drop-shadow(black 10px 10px 6px);
         margin: 20px 10px 0 10px;
+        overflow-x: hidden;
     }
 }
 @media screen and (max-width:426px) {
+
+    .skills {
+        justify-content: end;
+    }
 
     .pl-skill, .uiux-skill, .wdt-skill, .pro-skill {
         width: 40%;
