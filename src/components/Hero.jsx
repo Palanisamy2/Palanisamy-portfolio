@@ -57,11 +57,18 @@ const Hero = () => {
 
             <motion.div variants={itemVariants} className="mb-8">
               <div className="text-xl sm:text-2xl text-dark-600 dark:text-gray-300 font-medium mb-4">
-                <span className="typing-animation">Full Stack Developer</span>
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                  className="inline-block"
+                >
+                  Full Stack Developer
+                </motion.span>
               </div>
               <p className="text-lg text-dark-500 dark:text-gray-400 max-w-2xl">
                 Passionate about creating engaging user experiences with modern web technologies. 
-                Specializing in React, Node.js, and UI/UX design.
+                Specializing in React, Node.js, Express, and PostgreSQL.
               </p>
             </motion.div>
 
