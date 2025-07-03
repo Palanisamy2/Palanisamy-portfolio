@@ -276,7 +276,7 @@ const About = () => {
                   className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-xl"
                 >
                   <img
-                    src="/palanisamy-img.png"
+                    src="/palanisamy-img copy.png"
                     alt="Palanisamy M"
                     className="w-full h-full object-cover"
                   />
