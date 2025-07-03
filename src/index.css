@@ -8,13 +8,13 @@
   }
   
   body {
-    @apply font-sans text-dark-800 bg-gradient-to-br from-slate-50 to-blue-50;
+    @apply font-sans text-dark-800 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300;
   }
 }
 
 @layer components {
   .glass-effect {
-    @apply bg-white/80 backdrop-blur-md border border-white/20;
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-white/20 dark:border-gray-700/20;
   }
   
   .gradient-text {
@@ -44,18 +44,23 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100;
+  @apply bg-gray-100 dark:bg-gray-800;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-400 rounded-full;
+  @apply bg-primary-400 dark:bg-primary-600 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-500;
+  @apply bg-primary-500 dark:bg-primary-500;
 }
 
 /* Smooth animations */
 * {
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Dark mode transitions */
+.dark {
+  color-scheme: dark;
 }

@@ -61,10 +61,10 @@ const About = () => {
       description: "Complete course covering HTML, CSS, JavaScript, and modern frameworks."
     },
     {
-      title: "PHP and MySQL Backend Development",
+      title: "PostgreSQL and MySQL Backend Development",
       provider: "Udemy",
       date: "Sept 9, 2023",
-      description: "Server-side scripting and database management with PHP and MySQL."
+      description: "Server-side scripting and database management with PostgreSQL and MySQL."
     }
   ]
 
@@ -122,14 +122,14 @@ const About = () => {
                 className="glass-effect p-6 rounded-xl card-hover"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
-                    <GraduationCap className="text-primary-600" size={24} />
+                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
+                    <GraduationCap className="text-primary-600 dark:text-primary-400" size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-dark-800 mb-2">{edu.degree}</h3>
-                    <p className="text-primary-600 font-medium mb-1">{edu.institution}</p>
-                    <p className="text-dark-500 text-sm mb-2">{edu.board} • {edu.period}</p>
-                    <span className="inline-block px-3 py-1 bg-secondary-100 text-secondary-700 rounded-full text-sm font-medium">
+                    <h3 className="text-xl font-semibold text-dark-800 dark:text-white mb-2">{edu.degree}</h3>
+                    <p className="text-primary-600 dark:text-primary-400 font-medium mb-1">{edu.institution}</p>
+                    <p className="text-dark-500 dark:text-gray-400 text-sm mb-2">{edu.board} • {edu.period}</p>
+                    <span className="inline-block px-3 py-1 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 rounded-full text-sm font-medium">
                       {edu.percentage}
                     </span>
                   </div>
@@ -151,14 +151,14 @@ const About = () => {
                 className="glass-effect p-6 rounded-xl card-hover"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center">
-                    <Award className="text-secondary-600" size={24} />
+                  <div className="w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-lg flex items-center justify-center">
+                    <Award className="text-secondary-600 dark:text-secondary-400" size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-dark-800 mb-2">{cert.title}</h3>
-                    <p className="text-secondary-600 font-medium mb-1">{cert.provider}</p>
-                    <p className="text-dark-500 text-sm mb-2">{cert.date}</p>
-                    <p className="text-dark-600">{cert.description}</p>
+                    <h3 className="text-xl font-semibold text-dark-800 dark:text-white mb-2">{cert.title}</h3>
+                    <p className="text-secondary-600 dark:text-secondary-400 font-medium mb-1">{cert.provider}</p>
+                    <p className="text-dark-500 dark:text-gray-400 text-sm mb-2">{cert.date}</p>
+                    <p className="text-dark-600 dark:text-gray-300">{cert.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -178,14 +178,14 @@ const About = () => {
                 className="glass-effect p-6 rounded-xl card-hover"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
-                    <Briefcase className="text-primary-600" size={24} />
+                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
+                    <Briefcase className="text-primary-600 dark:text-primary-400" size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-dark-800 mb-2">{exp.title}</h3>
-                    <p className="text-primary-600 font-medium mb-1">{exp.company}</p>
-                    <p className="text-dark-500 text-sm mb-2">{exp.period}</p>
-                    <p className="text-dark-600">{exp.description}</p>
+                    <h3 className="text-xl font-semibold text-dark-800 dark:text-white mb-2">{exp.title}</h3>
+                    <p className="text-primary-600 dark:text-primary-400 font-medium mb-1">{exp.company}</p>
+                    <p className="text-dark-500 dark:text-gray-400 text-sm mb-2">{exp.period}</p>
+                    <p className="text-dark-600 dark:text-gray-300">{exp.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -205,12 +205,12 @@ const About = () => {
                 className="glass-effect p-6 rounded-xl card-hover"
               >
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center">
-                    <User className="text-secondary-600" size={24} />
+                  <div className="w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-lg flex items-center justify-center">
+                    <User className="text-secondary-600 dark:text-secondary-400" size={24} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-dark-800 mb-2">{achievement.title}</h3>
-                    <p className="text-dark-600">{achievement.description}</p>
+                    <h3 className="text-xl font-semibold text-dark-800 dark:text-white mb-2">{achievement.title}</h3>
+                    <p className="text-dark-600 dark:text-gray-300">{achievement.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -224,7 +224,7 @@ const About = () => {
   }
 
   return (
-    <section id="about" className="section-padding bg-gradient-to-b from-white to-gray-50">
+    <section id="about" className="section-padding bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
@@ -238,7 +238,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.2 }}
-            className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4"
+            className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium mb-4"
           >
             About Me
           </motion.span>
@@ -246,7 +246,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl lg:text-5xl font-display font-bold text-dark-800 mb-6"
+            className="text-4xl lg:text-5xl font-display font-bold text-dark-800 dark:text-white mb-6"
           >
             Get to Know <span className="gradient-text">More About Me</span>
           </motion.h2>
@@ -254,7 +254,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.4 }}
-            className="text-lg text-dark-600 max-w-3xl mx-auto"
+            className="text-lg text-dark-600 dark:text-gray-300 max-w-3xl mx-auto"
           >
             I'm a passionate web developer with expertise in modern technologies and a hunger for learning. 
             I bring fresh perspectives and creativity to every project I work on.
@@ -273,18 +273,18 @@ const About = () => {
               <div className="relative mb-6">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl"
+                  className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-xl"
                 >
                   <img
-                    src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+                    src="/palanisamy-img.png"
                     alt="Palanisamy M"
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
               </div>
-              <h3 className="text-2xl font-bold text-dark-800 mb-2">Palanisamy M</h3>
-              <p className="text-primary-600 font-medium mb-4">Full Stack Developer</p>
-              <p className="text-dark-600 text-sm mb-6">
+              <h3 className="text-2xl font-bold text-dark-800 dark:text-white mb-2">Palanisamy M</h3>
+              <p className="text-primary-600 dark:text-primary-400 font-medium mb-4">Full Stack Developer</p>
+              <p className="text-dark-600 dark:text-gray-300 text-sm mb-6">
                 Passionate about creating engaging user experiences with modern web technologies.
               </p>
               <motion.button
@@ -315,7 +315,7 @@ const About = () => {
                   className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                     activeTab === tab.id
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'glass-effect text-dark-600 hover:bg-primary-50'
+                      : 'glass-effect text-dark-600 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20'
                   }`}
                 >
                   <tab.icon size={20} />

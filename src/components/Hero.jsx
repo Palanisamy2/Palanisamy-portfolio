@@ -33,7 +33,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-secondary-50/50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-secondary-50/50 dark:from-gray-900/50 dark:to-gray-800/50"></div>
       
       <motion.div
         ref={ref}
@@ -46,20 +46,20 @@ const Hero = () => {
           {/* Text Content */}
           <div className="text-center lg:text-left">
             <motion.div variants={itemVariants} className="mb-6">
-              <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium mb-4">
                 👋 Welcome to my portfolio
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-dark-800 leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-dark-800 dark:text-white leading-tight">
                 Hi, I'm{' '}
                 <span className="gradient-text">Palanisamy M</span>
               </h1>
             </motion.div>
 
             <motion.div variants={itemVariants} className="mb-8">
-              <div className="text-xl sm:text-2xl text-dark-600 font-medium mb-4">
+              <div className="text-xl sm:text-2xl text-dark-600 dark:text-gray-300 font-medium mb-4">
                 <span className="typing-animation">Full Stack Developer</span>
               </div>
-              <p className="text-lg text-dark-500 max-w-2xl">
+              <p className="text-lg text-dark-500 dark:text-gray-400 max-w-2xl">
                 Passionate about creating engaging user experiences with modern web technologies. 
                 Specializing in React, Node.js, and UI/UX design.
               </p>
@@ -79,7 +79,7 @@ const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center space-x-2 px-6 py-3 border-2 border-primary-500 text-primary-600 rounded-xl font-medium hover:bg-primary-50 transition-all duration-300"
+                className="inline-flex items-center space-x-2 px-6 py-3 border-2 border-primary-500 text-primary-600 dark:text-primary-400 rounded-xl font-medium hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-300"
               >
                 <Download size={20} />
                 <span>Download CV</span>
@@ -90,7 +90,7 @@ const Hero = () => {
               {[
                 { icon: Github, href: "https://github.com/Palanisamy2", label: "GitHub" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/palanisamy-m-23a5a72b7/", label: "LinkedIn" },
-                { icon: Mail, href: "mailto:your.email@example.com", label: "Email" }
+                { icon: Mail, href: "mailto:palanisamy20044@gmail.com", label: "Email" }
               ].map((social, index) => (
                 <motion.a
                   key={index}
@@ -99,7 +99,7 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -5 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-dark-600 hover:text-primary-600"
+                  className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-dark-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
                   aria-label={social.label}
                 >
                   <social.icon size={24} />
@@ -122,10 +122,10 @@ const Hero = () => {
               
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl"
+                className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-2xl"
               >
                 <img
-                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  src="/palanisamy-img.png"
                   alt="Palanisamy M"
                   className="w-full h-full object-cover"
                 />
@@ -144,7 +144,7 @@ const Hero = () => {
             href="#about"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center text-dark-400 hover:text-primary-600 transition-colors"
+            className="flex flex-col items-center text-dark-400 dark:text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
           >
             <span className="text-sm mb-2">Scroll Down</span>
             <ChevronDown size={24} />
