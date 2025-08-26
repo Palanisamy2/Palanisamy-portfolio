@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
+import resume from '../Components/assert/pdf/Palanisamy_M,pdf'
 
 const Hero = () => {
   const [ref, inView] = useInView({
@@ -83,14 +84,22 @@ const Hero = () => {
                 <span>Get In Touch</span>
               </motion.a>
               
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center space-x-2 px-6 py-3 border-2 border-primary-500 text-primary-600 dark:text-primary-400 rounded-xl font-medium hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-300"
-              >
-                <Download size={20} />
-                <span>Download CV</span>
-              </motion.button>
+<motion.button
+  onClick={() => {
+    const link = document.createElement("a");
+    link.href = resume;
+    link.download = "Palanisamy_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="inline-flex items-center space-x-2 px-6 py-3 border-2 border-primary-500 text-primary-600 dark:text-primary-400 rounded-xl font-medium hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-300"
+>
+  <Download size={20} />
+  <span>Download CV</span>
+</motion.button>
             </motion.div>
 
             <motion.div variants={itemVariants} className="flex space-x-6 justify-center lg:justify-start">
