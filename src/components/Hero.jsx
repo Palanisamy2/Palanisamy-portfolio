@@ -1,172 +1,104 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react'
-import { useInView } from 'react-intersection-observer'
-import resume from '../Components/assert/pdf/Palanisamy_M,pdf'
+import { Download, Github, Linkedin, Mail, Instagram, Twitter, Zap } from 'lucide-react'
+import resume from './assert/pdf/Palanisamy_M.pdf'
 
 const Hero = () => {
-  const [ref, inView] = useInView({
-    threshold: 0.1,
-    triggerOnce: true
-  })
-
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3
-      }
-    }
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
   }
 
   const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-secondary-50/50 dark:from-gray-900/50 dark:to-gray-800/50"></div>
-      
-      <motion.div
-        ref={ref}
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
-      >
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
-          <div className="text-center lg:text-left">
-            <motion.div variants={itemVariants} className="mb-6">
-              <span className="inline-block px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium mb-4">
-                👋 Welcome to my portfolio
-              </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-dark-800 dark:text-white leading-tight">
-                Hi, I'm{' '}
-                <span className="gradient-text">Palanisamy M</span>
-              </h1>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="mb-8">
-              <div className="text-xl sm:text-2xl text-dark-600 dark:text-gray-300 font-medium mb-4">
-                <motion.span
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
-                  className="inline-block"
-                >
-                  Full Stack Developer
-                </motion.span>
-              </div>
-              <p className="text-lg text-dark-500 dark:text-gray-400 max-w-2xl">
-                Passionate about creating engaging user experiences with modern web technologies. 
-                Specializing in React, Node.js, Express, and PostgreSQL.
-              </p>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary inline-flex items-center space-x-2"
-              >
-                <Mail size={20} />
-                <span>Get In Touch</span>
-              </motion.a>
-              
-<motion.button
-  onClick={() => {
-    const link = document.createElement("a");
-    link.href = resume;
-    link.download = "Palanisamy_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }}
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  className="inline-flex items-center space-x-2 px-6 py-3 border-2 border-primary-500 text-primary-600 dark:text-primary-400 rounded-xl font-medium hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-300"
->
-  <Download size={20} />
-  <span>Download CV</span>
-</motion.button>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="flex space-x-6 justify-center lg:justify-start">
-              {[
-                { icon: Github, href: "https://github.com/Palanisamy2", label: "GitHub" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/palanisamy-m-23a5a72b7/", label: "LinkedIn" },
-                { icon: Mail, href: "mailto:palanisamy20044@gmail.com", label: "Email" }
-              ].map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, y: -5 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-dark-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
-                  aria-label={social.label}
-                >
-                  <social.icon size={24} />
-                </motion.a>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Profile Image */}
-          <motion.div
-            variants={itemVariants}
-            className="flex justify-center lg:justify-end"
-          >
-            <div className="relative">
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-400 to-secondary-400 opacity-20 blur-xl"
-              ></motion.div>
-              
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-2xl"
-              >
-                <img
-                  src="/palanisamy-img copy.png"
-                  alt="Palanisamy M"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Scroll Indicator */}
+    <section id="home" className="relative w-full min-h-[100vh] mt-16 md:mt-20 bg-[#0d0d0d] font-sans antialiased overflow-hidden flex items-center justify-center border-b border-[#222]">
+      <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 xl:px-20 relative z-10 flex flex-col items-center justify-center h-full pt-10 pb-20">
+        
         <motion.div
-          variants={itemVariants}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="w-full relative"
         >
-          <motion.a
-            href="#about"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center text-dark-400 dark:text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-          >
-            <span className="text-sm mb-2">Scroll Down</span>
-            <ChevronDown size={24} />
-          </motion.a>
+          {/* Main Huge Typography */}
+          <motion.div variants={itemVariants} className="text-center w-full mb-16 md:mb-[15vh]">
+            <h1 className="text-[12vw] md:text-[8vw] lg:text-[7vw] font-black text-white leading-[1] tracking-wider font-mono">
+              PALANISAMY M
+            </h1>
+          </motion.div>
+
+          {/* Bottom Row Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 items-end w-full">
+            
+            {/* Left Column - Core Skills */}
+            <motion.div variants={itemVariants} className="flex flex-col gap-4">
+              <div className="text-white text-xl md:text-2xl font-bold tracking-wide flex items-center gap-3">
+                <span className="text-[#ceef00] font-mono">=&gt;</span> Backend Dev
+              </div>
+              <div className="text-white text-xl md:text-2xl font-bold tracking-wide flex items-center gap-3">
+                <span className="text-[#ceef00] font-mono">=&gt;</span> Web Development
+              </div>
+              <div className="text-white text-xl md:text-2xl font-bold tracking-wide flex items-center gap-3">
+                <span className="text-[#ceef00] font-mono">=&gt;</span> Frontend Architecture
+              </div>
+              
+              {/* Social Links under skills */}
+              <div className="flex items-center gap-5 mt-6">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#888] hover:text-white transition-colors">
+                  <Instagram size={20} />
+                </a>
+                <a href="https://www.linkedin.com/in/palanisamy-m-23a5a72b7/" target="_blank" rel="noopener noreferrer" className="text-[#888] hover:text-white transition-colors">
+                  <Linkedin size={20} />
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#888] hover:text-white transition-colors">
+                  <Twitter size={20} />
+                </a>
+                <a href="https://github.com/Palanisamy2" target="_blank" rel="noopener noreferrer" className="text-[#888] hover:text-white transition-colors">
+                  <Github size={20} />
+                </a>
+                <a href="mailto:palanisamy20044@gmail.com" className="text-[#888] hover:text-white transition-colors">
+                  <Mail size={20} />
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Middle Column - Placeholder for balance, where the image technically was */}
+            <div className="hidden md:block" />
+
+            {/* Right Column - Status and Button */}
+            <motion.div variants={itemVariants} className="flex flex-col justify-end right-col items-start md:items-end text-left md:text-right">
+              <p className="text-[#aaaaaa] text-sm font-semibold tracking-widest max-w-[300px] uppercase leading-relaxed mb-6">
+                FULL STACK DEVELOPER CRAFTING ROBUST WEB APPLICATIONS EXCELLING IN SCALABLE FRONT-END & BACK-END SOLUTIONS
+              </p>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full border border-[#ceef00] flex items-center justify-center text-[#ceef00]">
+                  <Zap size={20} fill="currentColor" />
+                </div>
+                
+                <button
+                  onClick={() => {
+                    const link = document.createElement("a");
+                    link.href = resume;
+                    link.download = "Palanisamy_Resume.pdf";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                  className="bg-[#ceef00] hover:bg-white text-black px-8 py-3.5 rounded-full font-bold text-sm tracking-widest transition-colors duration-300 uppercase"
+                >
+                  DOWNLOAD CV
+                </button>
+              </div>
+            </motion.div>
+
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   )
 }

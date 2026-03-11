@@ -1,195 +1,95 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Heart, ArrowUp } from 'lucide-react'
+import React, { useState, useEffect } from 'react'
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+  const [time, setTime] = useState('')
 
-  const footerLinks = {
-    navigation: [
-      { name: 'Home', href: '#home' },
-      { name: 'About', href: '#about' },
-      { name: 'Skills', href: '#skills' },
-      { name: 'Projects', href: '#projects' },
-      { name: 'Services', href: '#services' },
-      { name: 'Contact', href: '#contact' }
-    ],
-    services: [
-      { name: 'Frontend Development', href: '#services' },
-      { name: 'Backend Development', href: '#services' },
-      { name: 'UI/UX Design', href: '#services' },
-      { name: 'Full Stack Development', href: '#services' }
-    ],
-    connect: [
-      { name: 'GitHub', href: 'https://github.com/Palanisamy2' },
-      { name: 'LinkedIn', href: 'https://www.linkedin.com/in/palanisamy-m-23a5a72b7/' },
-      { name: 'Email', href: 'mailto:palanisamy.dev@gmail.com' },
-      { name: 'Resume', href: '#' }
-    ]
-  }
+  useEffect(() => {
+    // Basic clock for the bottom right corner
+    const updateTime = () => {
+      const now = new Date()
+      const formattedTime = now.toLocaleTimeString('en-US', {
+        timeZone: 'Asia/Kolkata',
+        hour12: true,
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+      })
+      setTime(`Tamil Nadu ${formattedTime}`)
+    }
+    
+    updateTime()
+    const interval = setInterval(updateTime, 1000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
-    <footer className="bg-dark-800 text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-secondary-500"></div>
+    <footer className="relative w-full bg-[#050505] text-white pt-10 pb-6 px-4 md:px-10 overflow-hidden min-h-[600px] flex flex-col justify-between items-center z-0 border-t border-[#111]">
+      
+      {/* Abstract Glowing Background Shape */}
+      <div className="absolute bottom-0 inset-x-0 h-full w-full pointer-events-none z-0 flex justify-center items-end opacity-60">
+        <div className="w-[120%] h-[70%] max-w-[1200px] bg-gradient-to-t from-[#ceef00] via-[#009fb2] to-transparent bg-opacity-40 blur-[120px] rounded-t-full transform translate-y-1/4 scale-y-150" />
       </div>
 
-      <div className="relative z-10">
-        {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Brand Section */}
-            <div className="lg:col-span-1">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <h3 className="text-2xl font-display font-bold gradient-text mb-4">
-                  Palanisamy M
-                </h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Full Stack Developer passionate about creating innovative web solutions 
-                  that make a difference. Let's build something amazing together.
-                </p>
-                <div className="flex items-center space-x-2 text-sm text-gray-400">
-                  <span>Made with</span>
-                  <Heart size={16} className="text-red-500 animate-pulse" />
-                  <span>in Tamil Nadu, India</span>
-                </div>
-              </motion.div>
-            </div>
+      <div className="w-full max-w-[1400px] relative z-10 flex flex-col h-full flex-grow">
+        
+        {/* TOP ROW - Social Links & Email */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-[#222] pb-6 mb-12 gap-6">
+          <div className="flex items-center gap-6">
+            <a href="https://github.com/Palanisamy2" className="text-[#888] font-semibold text-sm hover:text-white transition-colors">GitHub</a>
+            <a href="https://www.linkedin.com/in/palanisamy-m-23a5a72b7/" className="text-[#888] font-semibold text-sm hover:text-white transition-colors">LinkedIn</a>
+            <a href="#" className="text-[#888] font-semibold text-sm hover:text-white transition-colors">X</a>
+            <a href="#" className="text-[#888] font-semibold text-sm hover:text-white transition-colors">Instagram</a>
+          </div>
+          <a href="mailto:palanisamy20044@gmail.com" className="text-[#888] font-medium text-sm hover:text-white transition-colors">
+            palanisamy20044@gmail.com
+          </a>
+        </div>
 
-            {/* Navigation Links */}
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-              >
-                <h4 className="text-lg font-semibold mb-6">Navigation</h4>
-                <ul className="space-y-3">
-                  {footerLinks.navigation.map((link, index) => (
-                    <li key={index}>
-                      <motion.a
-                        href={link.href}
-                        whileHover={{ x: 5 }}
-                        className="text-gray-300 hover:text-primary-400 transition-colors duration-300"
-                      >
-                        {link.name}
-                      </motion.a>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            </div>
+        {/* MIDDLE SECTION - Logo, Nav Stack, Description */}
+        <div className="flex flex-col md:flex-row justify-between items-start gap-12 w-full mb-20 md:mb-32">
+          
+          {/* Logo */}
+          <div className="w-full md:w-1/3">
+            <a href="#home" className="flex items-center gap-1 group">
+              <span className="text-white font-bold text-2xl tracking-tight">Palani</span>
+              <span className="text-[#ceef00] text-sm mb-3">&reg;</span>
+            </a>
+          </div>
 
-            {/* Services Links */}
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <h4 className="text-lg font-semibold mb-6">Services</h4>
-                <ul className="space-y-3">
-                  {footerLinks.services.map((link, index) => (
-                    <li key={index}>
-                      <motion.a
-                        href={link.href}
-                        whileHover={{ x: 5 }}
-                        className="text-gray-300 hover:text-primary-400 transition-colors duration-300"
-                      >
-                        {link.name}
-                      </motion.a>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            </div>
+          {/* Navigation Stack */}
+          <div className="w-full md:w-1/3 flex flex-col gap-1 items-start md:items-center">
+            <a href="#home" className="text-[#ddd] text-2xl hover:text-white transition-colors">Home</a>
+            <a href="#projects" className="text-[#666] text-2xl hover:text-white transition-colors">Work</a>
+            <a href="#about" className="text-[#666] text-2xl hover:text-white transition-colors">About</a>
+            <a href="#contact" className="text-[#666] text-2xl hover:text-white transition-colors">Contact</a>
+          </div>
 
-            {/* Connect Links */}
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <h4 className="text-lg font-semibold mb-6">Connect</h4>
-                <ul className="space-y-3">
-                  {footerLinks.connect.map((link, index) => (
-                    <li key={index}>
-                      <motion.a
-                        href={link.href}
-                        target={link.href.startsWith('http') ? '_blank' : '_self'}
-                        rel={link.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                        whileHover={{ x: 5 }}
-                        className="text-gray-300 hover:text-primary-400 transition-colors duration-300"
-                      >
-                        {link.name}
-                      </motion.a>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            </div>
+          {/* Short Bio / Location text */}
+          <div className="w-full md:w-1/3 flex md:justify-end">
+            <p className="text-[#666] text-sm md:text-right max-w-[200px] leading-relaxed">
+              Developer based in Tamil Nadu, We engineer obsessions.
+            </p>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-700">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="text-gray-400 text-sm"
-              >
-                © {new Date().getFullYear()} Palanisamy M. All rights reserved.
-              </motion.p>
-              
-              <div className="flex items-center space-x-6">
-                <motion.a
-                  href="#"
-                  whileHover={{ scale: 1.05 }}
-                  className="text-gray-400 hover:text-primary-400 text-sm transition-colors duration-300"
-                >
-                  Privacy Policy
-                </motion.a>
-                <motion.a
-                  href="#"
-                  whileHover={{ scale: 1.05 }}
-                  className="text-gray-400 hover:text-primary-400 text-sm transition-colors duration-300"
-                >
-                  Terms of Service
-                </motion.a>
-              </div>
-            </div>
-          </div>
+      </div>
+
+      {/* HUGE TYPOGRAPHY & FOOTER BOTTOM */}
+      <div className="w-full relative z-10 flex flex-col justify-end mt-auto">
+        <div className="w-full flex justify-center w-full overflow-hidden leading-none select-none mb-10 md:mb-16">
+          <h2 className="text-[18vw] md:text-[14vw] font-bold text-white tracking-tighter mix-blend-overlay">
+            Get in Touch
+          </h2>
         </div>
 
-        {/* Scroll to Top Button */}
-        <motion.button
-          onClick={scrollToTop}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="fixed bottom-8 right-8 w-12 h-12 bg-primary-500 hover:bg-primary-600 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 z-50"
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-        >
-          <ArrowUp size={20} />
-        </motion.button>
+        <div className="w-full max-w-[1400px] mx-auto flex flex-col sm:flex-row justify-between items-center text-[#888] font-medium text-xs uppercase tracking-widest px-4 gap-4">
+          <span className="text-center sm:text-left">Palani &ndash; Portfolio &copy; {new Date().getFullYear()}</span>
+          <span className="text-center sm:text-right font-mono text-[10px] sm:text-xs">
+            {time || 'Loading time...'}
+          </span>
+        </div>
       </div>
+      
     </footer>
   )
 }
