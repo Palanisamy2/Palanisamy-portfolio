@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ExternalLink, Github, Eye } from 'lucide-react'
+import { ArrowUpRight, Github } from 'lucide-react'
 
 const Projects = () => {
   const [filter, setFilter] = useState('all')
@@ -10,50 +10,44 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Tourist Places in Tamil Nadu",
+      title: "Tamil Nadu Tourism",
+      location: "Full Stack Web App",
+      duration: "2023 - 2024",
+      description: "Interactive trip planner with dynamic mapping and attraction insights.",
       category: "fullstack",
-      description: "A comprehensive website helping travelers plan trips with interactive maps and detailed information about tourist attractions.",
-      image: "https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=600",
       technologies: ["JavaScript", "PHP", "MySQL"],
       liveUrl: "https://palanisamy2.github.io/Trip-project/trip/index.html",
-      githubUrl: "#"
     },
     {
       id: 2,
-      title: "Personal Portfolio",
+      title: "Digital Portfolio",
+      location: "Frontend Excellence",
+      duration: "2024 - Present",
+      description: "High-performance React portfolio with brutalist and minimalist logic.",
       category: "frontend",
-      description: "A modern, responsive portfolio showcasing my skills, projects, and services with an elegant dark-theme design.",
-      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["React", "Tailwind CSS"],
+      technologies: ["React", "GSAP", "Tailwind"],
       liveUrl: "https://palanisamy2.github.io/palani-portfolio/portfolio-palanisamy/index.html",
-      githubUrl: "#"
     },
     {
       id: 3,
-      title: "Calculator App",
+      title: "Precision Calculator",
+      location: "Utility Tool",
+      duration: "2023",
+      description: "Clean logic-driven calculator supporting complex arithmetic operations.",
       category: "frontend",
-      description: "A fully functional calculator with a clean interface, supporting arithmetic operations and safe error handling.",
-      image: "https://images.pexels.com/photos/6238297/pexels-photo-6238297.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["HTML", "CSS", "JavaScript"],
+      technologies: ["HTML", "CSS", "JS"],
       liveUrl: "https://palanisamy2.github.io/claculator-js/calculator/index.html",
-      githubUrl: "#"
     },
     {
       id: 4,
-      title: "E-commerce Platform",
+      title: "E-Commerce Suite",
+      location: "MERN Prototype",
+      duration: "2023 - 2024",
+      description: "Scale-ready platform with auth, product management, and cart logic.",
       category: "fullstack",
-      description: "A modern e-commerce platform with user authentication, product management, and a shopping cart integration.",
-      image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["React", "Express", "Node.js"],
+      technologies: ["React", "Express", "Node"],
       liveUrl: "#",
-      githubUrl: "#"
     }
-  ]
-
-  const filters = [
-    { id: 'all', label: 'All Work' },
-    { id: 'frontend', label: 'Frontend' },
-    { id: 'fullstack', label: 'Full Stack' }
   ]
 
   const filteredProjects = filter === 'all' 
@@ -62,141 +56,135 @@ const Projects = () => {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
   }
 
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } }
+  const rowVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
   }
 
   return (
-    <section id="projects" className="relative w-full bg-[#0d0d0d] font-sans antialiased overflow-hidden py-20 md:py-32 border-b border-[#222]">
-      <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 xl:px-20 relative z-10" ref={ref}>
+    <section id="projects" className="relative w-full bg-[#fcfcfc] dark:bg-[#0a0a0a] font-sans antialiased overflow-hidden py-24 md:py-32 transition-colors duration-500" ref={ref}>
+      <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 relative z-10">
+        
+        {/* Header Section - Match Image */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col lg:flex-row justify-between items-start gap-10 mb-24 md:mb-32"
+        >
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-2 mb-8">
+              <div className="w-1.5 h-1.5 rounded-full bg-black dark:bg-white" />
+              <span className="text-xs md:text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em]">Projects</span>
+            </div>
+            <h2 className="text-5xl md:text-7xl font-normal tracking-[-0.03em] text-black dark:text-white leading-[1.1]">
+              Explore My Development Journey
+            </h2>
+          </div>
+          <div className="lg:max-w-md pt-8 lg:pt-20">
+            <p className="text-base md:text-[1.05rem] leading-relaxed text-gray-500 dark:text-gray-400 font-medium mb-8">
+              Over the past 4+ years, I've had the opportunity to build a 
+              wide range of digital products, collaborating with various 
+              frameworks and tools to bring creative visions to life.
+            </p>
+            <a href="https://github.com/Palanisamy2" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-black dark:text-white underline underline-offset-8 decoration-gray-200 dark:decoration-white/10 hover:decoration-black dark:hover:decoration-white transition-all">
+              Explore GitHub <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Filters - Minimalist subtle tabs */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          className="flex gap-8 mb-12 border-b border-gray-100 dark:border-white/5 pb-4"
+        >
+          {['all', 'frontend', 'fullstack'].map((f) => (
+            <button
+              key={f}
+              onClick={() => setFilter(f)}
+              className={`text-[10px] font-bold uppercase tracking-[0.2em] transition-colors ${
+                filter === f ? 'text-black dark:text-white' : 'text-gray-400 hover:text-black dark:hover:text-white'
+              }`}
+            >
+              {f === 'all' ? 'All Work' : f}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Projects List Layout */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
+          className="flex flex-col"
         >
-          {/* HEADER SECTION */}
-          <div className="flex flex-col items-center text-center mb-16 md:mb-24">
-            <motion.div variants={itemVariants} className="inline-block border border-[#333] bg-[#141414] rounded-full px-5 py-2 mb-8">
-              <span className="text-[#a1a1aa] text-sm font-medium tracking-wide">Featured Projects</span>
-            </motion.div>
-            
-            <motion.h2 variants={itemVariants} className="text-[3rem] md:text-[4.5rem] lg:text-[5.5rem] font-bold tracking-tight text-white leading-[1.05] mb-6 max-w-5xl mx-auto">
-              Bringing visions into <br className="hidden md:block"/> stunning realties.
-            </motion.h2>
-            
-            <motion.p variants={itemVariants} className="text-[#888] text-[1.1rem] md:text-[1.2rem] max-w-2xl mx-auto mb-12">
-              Unlock powerful web experiences. Here's a selection of my latest and greatest works across various domains.
-            </motion.p>
-
-            {/* FILTERS */}
-            <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-3">
-              {filters.map((filterItem) => (
-                <button
-                  key={filterItem.id}
-                  onClick={() => setFilter(filterItem.id)}
-                  className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                    filter === filterItem.id
-                      ? 'bg-white text-black shadow-lg'
-                      : 'bg-transparent text-[#888] border border-[#333] hover:border-[#666] hover:text-white'
-                  }`}
-                >
-                  {filterItem.label}
-                </button>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* PROJECTS GRID */}
-          <div className="mt-12 md:mt-16">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={filter}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project) => (
+              <motion.a
+                key={project.id}
+                layout
+                variants={rowVariants}
+                initial="hidden"
+                animate="visible"
+                exit={{ opacity: 0, x: -20 }}
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-6 md:gap-10 py-10 md:py-14 items-center border-b border-gray-100 dark:border-white/5 hover:bg-gray-50/50 dark:hover:bg-white/[0.02] transition-colors px-4 -mx-4 rounded-xl"
               >
-                {filteredProjects.map((project) => (
-                  <motion.div
-                    key={project.id}
-                    variants={itemVariants}
-                    className="group relative flex flex-col h-[520px] rounded-[2rem] bg-gradient-to-br from-[#1e293b]/80 to-[#0f172a] border border-[#334155]/50 overflow-hidden"
-                  >
-                    {/* Inner soft glow */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-transparent to-white/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    
-                    {/* Project Info */}
-                    <div className="p-8 md:p-10 pb-0 z-10 flex flex-col items-start">
-                      <h3 className="text-white text-[1.6rem] font-bold tracking-tight mb-4">
-                        {project.title}
-                      </h3>
-                      <p className="text-[#94a3b8] text-base leading-relaxed line-clamp-3">
-                        {project.description}
-                      </p>
+                {/* Title & Info */}
+                <div className="lg:col-span-4 flex flex-col gap-2">
+                  <h3 className="text-2xl md:text-3xl font-normal text-black dark:text-white group-hover:translate-x-2 transition-transform duration-500">
+                    {project.title}
+                  </h3>
+                  <div className="flex items-center gap-3 text-[10px] md:text-[11px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">
+                    <span>{project.location}</span>
+                    <span>•</span>
+                    <span>{project.duration}</span>
+                  </div>
+                </div>
 
-                      <div className="flex flex-wrap gap-2 mt-6">
-                        {project.technologies.slice(0, 3).map((tech, i) => (
-                          <span key={i} className="px-3 py-1 bg-[#1e293b] border border-[#334155] rounded-full text-[#cbd5e1] text-[0.7rem] uppercase tracking-wider font-semibold">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                {/* Description snippet */}
+                <div className="lg:col-span-5">
+                  <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium max-w-md">
+                    {project.description}
+                  </p>
+                </div>
 
-                    {/* Image Mockup Area */}
-                    <div className="relative mt-auto pt-10 px-6 sm:px-10 h-[260px] w-full flex justify-center">
-                      <div className="w-full h-full relative z-10 rounded-t-[1.5rem] overflow-hidden border-t border-x border-[#334155]/50 shadow-[0_0_30px_rgba(0,0,0,0.5)] transform translate-y-4 group-hover:translate-y-2 transition-transform duration-500">
-                        <img 
-                          src={project.image} 
-                          alt={project.title} 
-                          className="w-full h-full object-cover object-top"
-                        />
-                        
-                        {/* Hover Overlay Buttons */}
-                        <div className="absolute inset-0 bg-[#0f172a]/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                          <a 
-                            href={project.liveUrl} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
-                          >
-                            <Eye size={20} />
-                          </a>
-                          <a 
-                            href={project.githubUrl} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 rounded-full bg-[#334155] text-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg border border-[#475569]"
-                          >
-                            <Github size={20} />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* CALL TO ACTION */}
-          <motion.div variants={itemVariants} className="mt-20 md:mt-28 flex justify-center">
-            <a
-              href="https://github.com/Palanisamy2"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-[#333] hover:border-[#666] hover:bg-[#141414] text-white rounded-full font-medium transition-all duration-300"
-            >
-              <Github size={20} />
-              <span>Explore My GitHub Repo</span>
-            </a>
-          </motion.div>
+                {/* Technology Tags */}
+                <div className="lg:col-span-3 flex justify-start lg:justify-end gap-2 flex-wrap">
+                  {project.technologies.slice(0, 3).map((tech, i) => (
+                    <span 
+                      key={i} 
+                      className="px-4 py-1.5 rounded-full border border-gray-200 dark:border-white/10 text-[10px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 group-hover:bg-black group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-black transition-all duration-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  <div className="w-10 h-10 rounded-full border border-gray-100 dark:border-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity ml-4 hidden lg:flex">
+                    <ArrowUpRight size={18} className="text-black dark:text-white" />
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </AnimatePresence>
         </motion.div>
+
+        {/* Bottom CTA */}
+        <motion.div 
+          variants={rowVariants}
+          className="mt-20 flex justify-center lg:justify-start"
+        >
+          <a href="https://github.com/Palanisamy2" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-10 py-5 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold text-xs uppercase tracking-[0.2em] transform hover:scale-105 transition-all shadow-xl">
+             <Github size={18} />
+             View All Repository
+          </a>
+        </motion.div>
+
       </div>
     </section>
   )

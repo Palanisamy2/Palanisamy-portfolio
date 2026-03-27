@@ -1,14 +1,14 @@
 import React from 'react'
 import { ThemeProvider } from './contexts/ThemeContext'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Services from './components/Services'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import ParticleBackground from './components/ParticleBackground'
+import Navbar from './Components/Navbar'
+import Hero from './Components/Hero'
+import About from './Components/About'
+import Skills from './Components/Skills'
+import Projects from './Components/Projects'
+import Services from './Components/Services'
+import Contact from './Components/Contact'
+import Footer from './Components/Footer'
+import ParticleBackground from './Components/ParticleBackground'
 
 function App() {
   return (

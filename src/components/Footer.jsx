@@ -1,97 +1,123 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Github, Linkedin, Twitter, Instagram, ArrowRight, ArrowUpRight } from 'lucide-react'
 
 const Footer = () => {
-  const [time, setTime] = useState('')
-
-  useEffect(() => {
-    // Basic clock for the bottom right corner
-    const updateTime = () => {
-      const now = new Date()
-      const formattedTime = now.toLocaleTimeString('en-US', {
-        timeZone: 'Asia/Kolkata',
-        hour12: true,
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric'
-      })
-      setTime(`Tamil Nadu ${formattedTime}`)
-    }
-    
-    updateTime()
-    const interval = setInterval(updateTime, 1000)
-    return () => clearInterval(interval)
-  }, [])
-
   return (
-    <footer className="relative w-full bg-[#050505] text-white pt-10 pb-6 px-4 md:px-10 overflow-hidden min-h-[600px] flex flex-col justify-between items-center z-0 border-t border-[#111]">
-      
-      {/* Abstract Glowing Background Shape */}
-      <div className="absolute bottom-0 inset-x-0 h-full w-full pointer-events-none z-0 flex justify-center items-end opacity-60">
-        <div className="w-[120%] h-[70%] max-w-[1200px] bg-gradient-to-t from-[#ceef00] via-[#009fb2] to-transparent bg-opacity-40 blur-[120px] rounded-t-full transform translate-y-1/4 scale-y-150" />
-      </div>
-
-      <div className="w-full max-w-[1400px] relative z-10 flex flex-col h-full flex-grow">
+    <footer className="relative w-full bg-[#0a0a0a] text-white pt-24 pb-12 transition-colors duration-500 overflow-hidden px-6 md:px-16 lg:px-24">
+      <div className="max-w-[1400px] mx-auto">
         
-        {/* TOP ROW - Social Links & Email */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-[#222] pb-6 mb-12 gap-6">
-          <div className="flex items-center gap-6">
-            <a href="https://github.com/Palanisamy2" className="text-[#888] font-semibold text-sm hover:text-white transition-colors">GitHub</a>
-            <a href="https://www.linkedin.com/in/palanisamy-m-23a5a72b7/" className="text-[#888] font-semibold text-sm hover:text-white transition-colors">LinkedIn</a>
-            <a href="#" className="text-[#888] font-semibold text-sm hover:text-white transition-colors">X</a>
-            <a href="#" className="text-[#888] font-semibold text-sm hover:text-white transition-colors">Instagram</a>
-          </div>
-          <a href="mailto:palanisamy20044@gmail.com" className="text-[#888] font-medium text-sm hover:text-white transition-colors">
-            palanisamy20044@gmail.com
-          </a>
+        {/* Top Header Section - Matches provided image */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-24 md:mb-32">
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-6xl md:text-8xl font-normal tracking-[-0.03em] leading-tight text-white mb-10 md:mb-0"
+          >
+            Let's Connect <br/> There
+          </motion.h2>
+
+          {/* Hire Me Now Pill Button */}
+          <motion.a 
+            href="#contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group flex items-center bg-[#1a1a1a] rounded-full p-2 pr-10 border border-white/5 shadow-2xl transition-all"
+          >
+            <div className="w-16 h-16 rounded-full bg-[#222] flex items-center justify-center mr-6 group-hover:bg-white group-hover:text-black transition-colors duration-500">
+               <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+            </div>
+            <span className="text-xl font-medium tracking-tight">Hire Me Now!</span>
+          </motion.a>
         </div>
 
-        {/* MIDDLE SECTION - Logo, Nav Stack, Description */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12 w-full mb-20 md:mb-32">
-          
-          {/* Logo */}
-          <div className="w-full md:w-1/3">
-            <a href="#home" className="flex items-center gap-1 group">
-              <span className="text-white font-bold text-2xl tracking-tight">Palani</span>
-              <span className="text-[#ceef00] text-sm mb-3">&reg;</span>
-            </a>
-          </div>
+        {/* Horizontal Divider */}
+        <div className="w-full h-[1px] bg-white/5 mb-20" />
 
-          {/* Navigation Stack */}
-          <div className="w-full md:w-1/3 flex flex-col gap-1 items-start md:items-center">
-            <a href="#home" className="text-[#ddd] text-2xl hover:text-white transition-colors">Home</a>
-            <a href="#projects" className="text-[#666] text-2xl hover:text-white transition-colors">Work</a>
-            <a href="#about" className="text-[#666] text-2xl hover:text-white transition-colors">About</a>
-            <a href="#contact" className="text-[#666] text-2xl hover:text-white transition-colors">Contact</a>
-          </div>
+        {/* Main Footer Info Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-10 mb-24">
+           
+           {/* Column 1: Logo & Socials */}
+           <div className="lg:col-span-4 flex flex-col items-start gap-8">
+              <div className="flex items-center gap-2">
+                 <div className="w-2.5 h-2.5 rounded-full bg-white" />
+                 <span className="text-3xl font-normal tracking-tight">Palani</span>
+              </div>
+              <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
+                 Developer and Designer focus on high-performance logic and minimalist 
+                 aesthetic. Engineering obsessions for global digital products.
+              </p>
+              <div className="flex items-center gap-6">
+                 {[
+                   { icon: <Github size={20} />, url: "https://github.com/Palanisamy2" },
+                   { icon: <Linkedin size={20} />, url: "https://www.linkedin.com/in/palanisamy-m-23a5a72b7/" },
+                   { icon: <Twitter size={20} />, url: "#" },
+                   { icon: <Instagram size={20} />, url: "#" }
+                 ].map((social, i) => (
+                   <a key={i} href={social.url} className="text-gray-600 hover:text-white transition-colors">
+                      {social.icon}
+                   </a>
+                 ))}
+              </div>
+           </div>
 
-          {/* Short Bio / Location text */}
-          <div className="w-full md:w-1/3 flex md:justify-end">
-            <p className="text-[#666] text-sm md:text-right max-w-[200px] leading-relaxed">
-              Developer based in Tamil Nadu, We engineer obsessions.
-            </p>
-          </div>
+           {/* Column 2: Address */}
+           <div className="lg:col-span-3 flex flex-col gap-6">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-600">Address</span>
+              <p className="text-sm text-gray-500 leading-relaxed font-medium">
+                Tamil Nadu, India <br/>
+                Digital Space 57292, Remote
+              </p>
+           </div>
+
+           {/* Column 3: Email */}
+           <div className="lg:col-span-3 flex flex-col gap-6">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-600">Email Address</span>
+              <div className="flex flex-col gap-2">
+                 <a href="mailto:palanisamy20044@gmail.com" className="text-sm text-gray-500 hover:text-white transition-colors">palanisamy20044@gmail.com</a>
+                 <a href="mailto:palanisamy@portfolio.dev" className="text-sm text-gray-500 hover:text-white transition-colors">palanisamy@work.dev</a>
+              </div>
+           </div>
+
+           {/* Column 4: Phone */}
+           <div className="lg:col-span-2 flex flex-col gap-6">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-600">Phone Number</span>
+              <div className="flex flex-col gap-2">
+                 <span className="text-sm text-gray-500">+91 131 4564 232</span>
+                 <span className="text-sm text-gray-500">+91 82124720342</span>
+              </div>
+           </div>
+        </div>
+
+        {/* Bottom Navigation Row */}
+        <div className="flex flex-col md:flex-row justify-between items-center py-10 border-t border-white/5 gap-8">
+           <div className="flex gap-10">
+              {['Projects', 'Gallery', 'Insights', 'About Me'].map(link => (
+                <a key={link} href={`#${link.toLowerCase()}`} className="text-xs font-bold uppercase tracking-widest text-gray-600 hover:text-white transition-colors">
+                  {link}
+                </a>
+              ))}
+           </div>
+           
+           <motion.a 
+             href="#home"
+             className="flex items-center gap-2 group text-xs font-bold uppercase tracking-[0.2em] text-gray-600 hover:text-white transition-all"
+           >
+              Back To Top <ArrowUpRight size={14} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+           </motion.a>
+        </div>
+
+        {/* Copyright */}
+        <div className="flex justify-center pt-8 border-t border-white/5">
+           <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-gray-700">
+              All rights reserved &copy; {new Date().getFullYear()} @Palani
+           </p>
         </div>
 
       </div>
-
-      {/* HUGE TYPOGRAPHY & FOOTER BOTTOM */}
-      <div className="w-full relative z-10 flex flex-col justify-end mt-auto">
-        <div className="w-full flex justify-center w-full overflow-hidden leading-none select-none mb-10 md:mb-16">
-          <h2 className="text-[18vw] md:text-[14vw] font-bold text-white tracking-tighter mix-blend-overlay">
-            Get in Touch
-          </h2>
-        </div>
-
-        <div className="w-full max-w-[1400px] mx-auto flex flex-col sm:flex-row justify-between items-center text-[#888] font-medium text-xs uppercase tracking-widest px-4 gap-4">
-          <span className="text-center sm:text-left">Palani &ndash; Portfolio &copy; {new Date().getFullYear()}</span>
-          <span className="text-center sm:text-right font-mono text-[10px] sm:text-xs">
-            {time || 'Loading time...'}
-          </span>
-        </div>
-      </div>
-      
     </footer>
   )
 }
 
-export default Footer
+export default Footer

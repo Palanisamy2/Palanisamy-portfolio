@@ -1,186 +1,122 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Code, Palette, Server, Lightbulb } from 'lucide-react'
+import skillBlue from './assert/image/skill_blue.png'
+import skillRed from './assert/image/skill_red.png'
+import skillGreen from './assert/image/skill_green.png'
+import skillYellow from './assert/image/skill_yellow.png'
 
 const Skills = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
-  const skillCategories = [
-    {
-      title: "Frontend Development",
-      icon: <Code className="text-emerald-400" size={24} />,
-      color: "emerald",
-      bgGradient: "from-emerald-500/20 to-emerald-900/20 border-emerald-500/30",
-      skills: [
-        { name: "React.js", level: 90 },
-        { name: "Tailwind CSS", level: 85 },
-        { name: "JavaScript", level: 85 },
-        { name: "HTML5/CSS3", level: 95 }
-      ]
-    },
-    {
-      title: "Backend Development",
-      icon: <Server className="text-blue-400" size={24} />,
-      color: "blue",
-      bgGradient: "from-blue-500/20 to-blue-900/20 border-blue-500/30",
-      skills: [
-        { name: "Node.js", level: 75 },
-        { name: "Express.js", level: 70 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MySQL", level: 85 }
-      ]
-    },
-    {
-      title: "Design Tools",
-      icon: <Palette className="text-purple-400" size={24} />,
-      color: "purple",
-      bgGradient: "from-purple-500/20 to-purple-900/20 border-purple-500/30",
-      skills: [
-        { name: "Adobe Photoshop", level: 85 },
-        { name: "UI/UX Design", level: 80 },
-        { name: "Figma", level: 75 },
-        { name: "Adobe XD", level: 70 }
-      ]
-    },
-    {
-      title: "Languages & Others",
-      icon: <Lightbulb className="text-orange-400" size={24} />,
-      color: "orange",
-      bgGradient: "from-orange-500/20 to-orange-900/20 border-orange-500/30",
-      skills: [
-        { name: "Java", level: 80 },
-        { name: "SQL", level: 85 },
-        { name: "Git/GitHub", level: 80 },
-        { name: "TypeScript", level: 70 }
-      ]
-    }
-  ]
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+  }
 
-  const additionalSkills = [
-    "Problem Solving", "Critical Thinking", "Team Collaboration", 
-    "Communication", "Adaptability", "Project Management",
-    "Responsive Design", "API Integration", "Version Control",
-    "Testing & Debugging", "Performance Optimization", "SEO"
-  ]
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+  }
 
   return (
-    <section id="skills" className="relative w-full bg-[#0d0d0d] font-sans antialiased overflow-hidden py-20 md:py-32 border-b border-[#222]">
-      <div className="max-w-[1400px] w-full mx-auto px-6 md:px-12 xl:px-20 relative z-10" ref={ref}>
-        {/* Central dividing line (desktop only) */}
-        <div className="hidden lg:block absolute top-[180px] bottom-0 left-1/2 w-px bg-[#262626] -translate-x-1/2 pointer-events-none">
-          {/* Top Crosshair */}
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-[#555] font-light text-2xl leading-none">+</div>
-        </div>
-
-        {/* HEADER SECTION */}
-        <div className="p-8 pb-4 md:p-16 md:px-24 xl:px-32 text-center max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            className="inline-flex items-center gap-2 border border-[#333] bg-[#141414] rounded-full px-5 py-2 w-max shadow-lg mb-8 mx-auto"
-          >
-            <span className="text-[#00e599] text-[10px] leading-none">◈</span>
-            <span className="text-white text-[11px] font-bold tracking-[0.2em] uppercase mt-0.5">My Arsenal</span>
-          </motion.div>
-          
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ delay: 0.1 }}
-            className="text-[2.5rem] md:text-[3.5rem] xl:text-[4rem] font-bold tracking-tight text-white mb-6 leading-[1.05]"
-          >
-            Technical <span className="text-[#666] font-normal">Expertise</span>
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.2 }}
-            className="text-[#888] text-[1.1rem] leading-relaxed mx-auto max-w-2xl"
-          >
-            I'm passionate about learning new technologies and constantly improving my toolkit. Here is the stack I use to build scalable and robust solutions.
-          </motion.p>
-        </div>
-
-        {/* SKILLS GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 mt-8 md:mt-12">
-          {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className={`p-8 md:p-16 ${categoryIndex % 2 === 0 ? 'lg:pl-24 xl:pl-32 lg:pr-16' : 'lg:pr-24 xl:pr-32 lg:pl-16'} border-t lg:border-t-0 border-[#262626] relative`}>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ delay: 0.2 + (categoryIndex * 0.1) }}
-                className="group h-full p-8 md:p-10 rounded-[2rem] bg-[#141414] border border-[#2a2a2a] hover:border-[#444] transition-colors duration-500 relative overflow-hidden"
-              >
-                {/* Subtle Glow Overlay on Hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none"
-                     style={{ background: `radial-gradient(circle at center, var(--tw-gradient-from), transparent 70%)` }} />
-
-                <div className="flex items-center gap-5 mb-10">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${category.bgGradient} border flex justify-center items-center shadow-lg flex-shrink-0`}>
-                    {category.icon}
-                  </div>
-                  <h3 className="text-white text-[1.5rem] font-bold tracking-tight">{category.title}</h3>
-                </div>
-
-                <div className="space-y-6">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="relative">
-                      <div className="flex mb-2">
-                        <span className="text-[#ccc] text-lg font-medium tracking-wide">{skill.name}</span>
-                      </div>
-                      
-                      {/* Premium Progress Bar */}
-                      <div className="w-full bg-[#222] rounded-full h-1.5 overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-                          transition={{ duration: 1.5, delay: 0.5 + (skillIndex * 0.1), ease: "easeOut" }}
-                          className={`h-full rounded-full bg-gradient-to-r ${
-                            category.color === 'emerald' ? 'from-emerald-600 to-emerald-400' :
-                            category.color === 'blue' ? 'from-blue-600 to-blue-400' :
-                            category.color === 'purple' ? 'from-purple-600 to-purple-400' :
-                            'from-orange-600 to-orange-400'
-                          } shadow-[0_0_10px_rgba(255,255,255,0.2)]`}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-          ))}
-        </div>
-
-        {/* ADDITIONAL SKILLS CHIPS */}
+    <section id="skills" className="relative w-full bg-[#fcfcfc] dark:bg-[#0a0a0a] font-sans antialiased overflow-hidden py-24 md:py-32 transition-colors duration-500" ref={ref}>
+      <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 relative z-10">
+        
+        {/* Header Section */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ delay: 0.6 }}
-          className="p-8 md:p-16 xl:px-32 mt-4"
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          className="flex flex-col items-start gap-10 mb-20 md:mb-24"
         >
-          <div className="p-8 md:p-12 rounded-[2rem] bg-[#1a1a1a]/50 border border-[#262626] relative overflow-hidden text-center">
-            
-            <h3 className="text-white text-[1.4rem] font-bold tracking-tight mb-8">Additional Skills & Interests</h3>
-            
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4 relative z-10">
-              {additionalSkills.map((skill, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ delay: 0.8 + index * 0.05 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  className="px-5 py-2.5 bg-[#141414] border border-[#333] hover:border-[#00e599]/50 hover:bg-[#00e599]/5 transition-all text-[#aaa] hover:text-white rounded-xl text-sm font-medium cursor-default shadow-sm"
-                >
-                  {skill}
-                </motion.span>
-              ))}
-            </div>
-            
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-black dark:bg-white" />
+            <span className="text-xs md:text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em]">Technical Arsenal</span>
           </div>
+          <h2 className="text-5xl md:text-7xl font-normal tracking-[-0.03em] text-black dark:text-white leading-[1.1]">
+            Expertise & <br/> Modern Stack
+          </h2>
+        </motion.div>
+
+        {/* Bento Grid Layout */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 md:auto-rows-[140px]"
+        >
+          {/* Card 1: Frontend (Large, Spans 3 cols, 3 rows) */}
+          <motion.div variants={itemVariants} className="md:col-span-3 md:row-span-3 bg-white dark:bg-[#111] rounded-[2.5rem] p-10 border border-gray-100 dark:border-white/5 shadow-sm group relative overflow-hidden flex flex-col justify-between">
+             <div className="relative z-10">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4 block">Professional</span>
+                <h3 className="text-3xl font-normal text-black dark:text-white mb-4">Frontend Development</h3>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {["React.js", "Tailwind CSS", "JavaScript", "TypeScript"].map(s => (
+                    <span key={s} className="px-3 py-1 bg-black/5 dark:bg-white/5 rounded-full text-[11px] font-medium text-gray-500 dark:text-gray-400">{s}</span>
+                  ))}
+                </div>
+             </div>
+             <div className="absolute top-1/2 -right-16 -translate-y-1/2 w-64 h-64 opacity-20 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+                <img src={skillBlue} alt="frontend" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
+             </div>
+          </motion.div>
+
+          {/* Card 2: UI/UX (Spans 2 cols, 2 rows) */}
+          <motion.div variants={itemVariants} className="md:col-span-2 md:row-span-2 bg-white dark:bg-[#111] rounded-[2.5rem] p-10 border border-gray-100 dark:border-white/5 shadow-sm group relative overflow-hidden flex flex-col justify-between">
+             <div className="relative z-10">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4 block">Creative Architecture</span>
+                <h3 className="text-2xl font-normal text-black dark:text-white mb-2">UI/UX Design</h3>
+                <p className="text-[11px] text-gray-400 dark:text-gray-500 font-medium tracking-tight">Figma, Photoshop, Adobe XD, Branding</p>
+             </div>
+             <div className="absolute -right-8 -bottom-8 w-40 h-40 opacity-40 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+                <img src={skillGreen} alt="uiux" className="w-full h-full object-contain group-hover:rotate-12 transition-transform duration-700" />
+             </div>
+          </motion.div>
+
+          {/* Card 3: Backend (Wide, Spans 4 cols, 2 rows) */}
+          <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-2 bg-white dark:bg-[#111] rounded-[2.5rem] p-10 border border-gray-100 dark:border-white/5 shadow-sm group relative overflow-hidden flex items-center gap-10">
+             <div className="w-1/2 z-10">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-4 block">Scalable Systems</span>
+                <h3 className="text-4xl font-normal text-black dark:text-white mb-6 leading-tight">Backend Engineering</h3>
+                <div className="flex flex-wrap gap-3">
+                  {["Node.js", "Express", "MySQL", "PostgreSQL"].map(s => (
+                    <span key={s} className="text-[10px] font-bold uppercase tracking-tighter text-black dark:text-white border-b border-black/10 dark:border-white/10 pb-0.5">{s}</span>
+                  ))}
+                </div>
+             </div>
+             <div className="absolute right-0 bottom-0 w-[240px] h-[240px] group-hover:scale-105 transition-transform duration-700">
+                <img src={skillRed} alt="backend" className="w-full h-full object-contain" />
+             </div>
+          </motion.div>
+
+          {/* Card 4: Tools (Small Square, Spans 2 cols, 2 rows) */}
+          <motion.div variants={itemVariants} className="md:col-span-2 md:row-span-2 bg-black dark:bg-white rounded-[2.5rem] p-10 flex flex-col justify-between group">
+             <h3 className="text-2xl font-normal text-white dark:text-black">DevOps & <br/> Modern Tools</h3>
+             <div className="flex justify-between items-end">
+                <div className="flex flex-col gap-1.5 leading-none">
+                   <span className="text-[9px] font-bold text-white/50 dark:text-black/50 tracking-widest">GIT / GITHUB</span>
+                   <span className="text-[9px] font-bold text-white/50 dark:text-black/50 tracking-widest">DOCKERHUB</span>
+                   <span className="text-[9px] font-bold text-white/50 dark:text-black/50 tracking-widest">VITE / GSAP</span>
+                </div>
+                <img src={skillYellow} alt="tech" className="w-16 h-16 object-contain opacity-50 group-hover:opacity-100 transition-opacity" />
+             </div>
+          </motion.div>
+
+          {/* Card 5: Languages (Horizontal Wide, Spans 4 cols, 1 row) */}
+          <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-1 bg-white dark:bg-[#111] rounded-[2rem] px-10 border border-gray-100 dark:border-white/5 shadow-sm flex items-center justify-between group">
+             <div className="flex items-center gap-6">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-black dark:text-white">Expert Languages</span>
+                <div className="w-8 h-[1px] bg-gray-200 dark:bg-white/10" />
+             </div>
+             <div className="flex gap-8 group-hover:gap-12 transition-all duration-500">
+                {["JAVA", "SQL", "PHP", "TYPESCRIPT"].map(lang => (
+                   <span key={lang} className="text-[10px] font-black tracking-widest text-gray-300 dark:text-gray-700 group-hover:text-black dark:group-hover:text-white transition-colors uppercase whitespace-nowrap">
+                      {lang}
+                   </span>
+                ))}
+             </div>
+          </motion.div>
+
         </motion.div>
 
       </div>
@@ -188,4 +124,4 @@ const Skills = () => {
   )
 }
 
-export default Skills
+export default Skills
